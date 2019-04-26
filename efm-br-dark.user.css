@@ -1,0 +1,121 @@
+/* ==UserStyle==
+@name           fleetcom.space br dark
+@description    A darker theme for EFM's battle report page.
+@namespace      github.com/red-pip
+@version        0.0.1
+@author         Philip Read (https://github.com/red-pip)
+@homepageURL    https://github.com/red-pip/efm-br-dark
+@updateURL      https://raw.githubusercontent.com/red-pip/efm-br-dark/master/efm-br-dark.user.css
+@license        unlicense
+@preprocessor   less
+
+@var    color   accentColor     "Accent Colour"     #522
+==/UserStyle== */
+
+@-moz-document url-prefix("https://fleetcom.space/battlereport") {
+    @textColor: #aaa;
+    @bgColor: #252525;
+    @lightBg: lighten(@bgColor, 5%);
+
+    body {
+        color: @textColor;
+        background-color: @bgColor;
+    }
+
+    /* -----------------------*/
+    /* Nav menu */
+    nav.main {
+        background-color: @accentColor;
+    }
+    nav ul a, nav .brand-logo {
+        color: @textColor;
+    }
+    a.disabled, a[disabled] {
+        color: darken(@textColor, 25%);
+    }
+
+    /* -----------------------*/
+    /* Buttons */
+    .btn, .btn-large, .btn-floating {
+        color: @textColor;
+        background-color: @accentColor;
+    }
+    .btn:hover, .btn-large:hover, .btn-floating:hover {
+        background-color: lighten(@accentColor, 20%);
+    }
+    .btn-floating i {
+        color: @textColor;
+    }
+    a {
+        color: lighten(@accentColor, 20%);
+    }
+
+    /* -----------------------*/
+    /* Player/Alliance count */
+    .related-view h4 .badge {
+        color: @textColor;
+        background-color: @accentColor;
+    }
+
+    /* -----------------------*/
+    /* Chips (stat boxes with curved ends) */
+    .chip {
+        color: @bgColor;
+        background-color: darken(@textColor, 10%);
+    }
+
+    /* -----------------------*/
+    /* Tabs */
+    .tabs {
+        background-color: @lightBg;
+    }
+    .tabs .indicator {
+        background-color: @textColor;
+    }
+    .tabs .tab a.active, .tabs .tab a:hover {
+        color: @textColor;
+    }
+    .tabs .tab a {
+        color: mix(@accentColor, @textColor, 50%);
+    }
+
+    /* -----------------------*/
+    /* Lists */
+    .collection {
+        border: none;
+    }
+    .collection.with-header .collection-header,
+    .collection .collection-item {
+        background-color: @lightBg;
+        border-bottom: 1px solid darken(@textColor, 30%);
+    }
+    .related-view #ships .collection .collection-item.killed {
+        background-color: mix(@lightBg, red, 88%) !important;
+    }
+
+    /* -----------------------*/
+    /* Team switch arrows */
+    .related-view .teams .collection .collection-item .move-organization {
+        color: mix(@accentColor, @textColor, 65%);
+    }
+
+    /* -----------------------*/
+    /* Show Trash checkbox */
+    [type="checkbox"].filled-in:checked + label::before {
+        border-right: 2px solid @textColor;
+        border-bottom: 2px solid @textColor;
+    }
+    [type="checkbox"].filled-in:checked + label::after {
+        background-color: @accentColor;
+        border: 2px solid @accentColor;
+    }
+
+    /* -----------------------*/
+    /* Timeline/Summary tables */
+    table.bordered > tbody > tr, table.bordered > thead > tr {
+        border-bottom: 1px solid @textColor;
+    }
+    table.highlight>tbody>tr:hover {
+        background-color: @lightBg;
+    }
+}
