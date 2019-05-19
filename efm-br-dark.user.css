@@ -2,7 +2,7 @@
 @name           fleetcom.space br dark
 @description    A darker theme for EFM's battle report page.
 @namespace      github.com/red-pip
-@version        0.0.6
+@version        0.0.7
 @author         Philip Read (https://github.com/red-pip)
 @homepageURL    https://github.com/red-pip/efm-br-dark
 @updateURL      https://raw.githubusercontent.com/red-pip/efm-br-dark/master/efm-br-dark.user.css
@@ -61,7 +61,7 @@
         .btn-floating i {
             color: @textColor;
         }
-        a {
+        span.hover-link a {
             color: lighten(@accentColor, 20%);
         }
 
@@ -140,6 +140,29 @@
             background-color: @lightBg;
         }
 
+        /* -----------------------*/
+        /* Player/Organisation tabs */
+        .collapsible, li:focus .collapsible {
+            border-top: 1px solid @textColor;
+            border-right: 1px solid @textColor;
+            border-left: 1px solid @textColor;
+        }
+        .collapsible-header {
+            background-color: @lightBg;
+            border-bottom: 1px solid @textColor;
+        }
+        .collapsible-body {
+            border-bottom: 1px solid @textColor;
+        }
+        .collapsible a {
+            color: lighten(@textColor, 20%);
+        }
+        .collapsible .red-text {
+            color: mix(@textColor, red, 35%) !important;
+        }
+        table.striped > tbody > tr:nth-child(2n+1) {
+            background-color: @lightBg;
+        }
 
         /* -----------------------*/
         /* Rudimentary page width response */
