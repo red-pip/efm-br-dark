@@ -2,7 +2,7 @@
 @name           fleetcom.space br dark
 @description    A darker theme for EFM's battle report page.
 @namespace      github.com/red-pip
-@version        0.0.3
+@version        0.0.4
 @author         Philip Read (https://github.com/red-pip)
 @homepageURL    https://github.com/red-pip/efm-br-dark
 @updateURL      https://raw.githubusercontent.com/red-pip/efm-br-dark/master/efm-br-dark.user.css
@@ -92,6 +92,9 @@
     /* Lists */
     .collection {
         border: none;
+    }
+    .collection.with-header {
+        background-color: transparent;
     }
     .collection.with-header .collection-header,
     .collection .collection-item {
