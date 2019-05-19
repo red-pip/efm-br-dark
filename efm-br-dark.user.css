@@ -2,7 +2,7 @@
 @name           fleetcom.space br dark
 @description    A darker theme for EFM's battle report page.
 @namespace      github.com/red-pip
-@version        0.0.4
+@version        0.0.5
 @author         Philip Read (https://github.com/red-pip)
 @homepageURL    https://github.com/red-pip/efm-br-dark
 @updateURL      https://raw.githubusercontent.com/red-pip/efm-br-dark/master/efm-br-dark.user.css
@@ -129,5 +129,27 @@
     }
     table.highlight>tbody>tr:hover {
         background-color: @lightBg;
+    }
+
+    /* -----------------------*/
+    /* Rudimentary page width response */
+    @media only screen and (max-width:85em) {
+        /* Ship list and team list to single column */
+        .row .col.s4 {
+            width: 100%;
+        }
+        /* ship lists now need team titles */
+        div#ships div.col.s4 ul.collection::before  {
+            font-size: xx-large;
+        }
+        div#ships div.col.s4:nth-child(2) ul.collection::before  {
+            content: "Team #1";
+        }
+        div#ships div.col.s4:nth-child(3) ul.collection::before  {
+            content: "Team #2";
+        }
+        div#ships div.col.s4:nth-child(4) ul.collection::before  {
+            content: "Team #3";
+        }
     }
 }
