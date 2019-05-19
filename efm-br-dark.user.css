@@ -2,7 +2,7 @@
 @name           fleetcom.space br dark
 @description    A darker theme for EFM's battle report page.
 @namespace      github.com/red-pip
-@version        0.0.2
+@version        0.0.3
 @author         Philip Read (https://github.com/red-pip)
 @homepageURL    https://github.com/red-pip/efm-br-dark
 @updateURL      https://raw.githubusercontent.com/red-pip/efm-br-dark/master/efm-br-dark.user.css
@@ -18,8 +18,11 @@
     @lightBg: lighten(@bgColor, 5%);
 
     body {
-        color: @textColor;
         background-color: @bgColor;
+    }
+
+    div, input {
+        color: @textColor;
     }
 
     /* -----------------------*/
@@ -107,11 +110,11 @@
 
     /* -----------------------*/
     /* Show Trash checkbox */
-    [type="checkbox"].filled-in:checked + label::before {
+    [type=checkbox].filled-in:checked + span:not(.lever)::before {
         border-right: 2px solid @textColor;
         border-bottom: 2px solid @textColor;
     }
-    [type="checkbox"].filled-in:checked + label::after {
+    [type=checkbox].filled-in:checked + span:not(.lever)::after {
         background-color: @accentColor;
         border: 2px solid @accentColor;
     }
